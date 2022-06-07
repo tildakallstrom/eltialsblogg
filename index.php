@@ -38,48 +38,11 @@ if (isset($_SESSION['username'])) {
         }
 
 
-        //if (isset($_SESSION['username'])) {
-        //  $username = $_SESSION['username'];
-        //echo "<h2 class='centerh2'>Läs de senaste inläggen</h2>";
-
-        /*   $alert = new Alerts();
-
-   $alertlist = $alert->getAlerts();
-foreach($alertlist as $alert) {
-   
-        echo "<div class='post'><img src=profileimg/" . $alert['profileimg'] . " alt='Profilbild' class='profileimg'> <p class='userp'><a class='postuser' href='user.php?id=" . $alert['id'] . "'>" . $alert['firstname'] ." ". $alert['lastname'] . "</a> kommenterade " . $alert['user'] . "'s inlägg om<h3>"  . $alert['title'] . "</h3> </p>";
-        
-        
-        $alert['content'] . 
-        "<p class='showmore'><a href='blogpost.php?postid=" . 
-        $alert['postid'] . "' 
-        class='readmore'>Läs mer/Kommentera</a>" . " 
-        </p><div>" . 
-        $alert['message'] . 
-        "</div></div>"; */
-
-        // echo "<div class='postindex'>" . $alert['title'] . $alert['content'] . $alert['user'] . $alert['message'] . " </div>";
-
-
-        //} 
-
-        //} else {
-
-        //}
-
+      
         ?>
         <?php
 
-        /*
-if(isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
-    if($alert->getAlerts()) {
-        echo "funkar";
-    } else {
-        echo "inte";
-        } 
-    } 
-*/
+      
         $alert = new Alerts();
         $alertlist = $alert->getAlerts($username);
         $username = $_SESSION['username'];
