@@ -40,37 +40,7 @@ if (isset($_GET['id'])) {
         <?php
         $users = new Users();
 
-        /*
-    if(isset($_GET['id'])) {
-    $username = $_SESSION['username'];
-    $userid = $_GET['id'];
-    //kolla om inloggad användare följer denna användare, isf skicka ut follow-knapp, annars inte
-    if($users->countFollower($userid)) {
-        echo $userid['NumberOfFollowers'];
-    } else {
-        echo "Inga följare";
-        } 
-    
-}
-
-
-  $followlist = $follow->countFollower($userid);
- $userid = $_GET['id'];
-    foreach ($followlist as $follow) {
-
-            if ($cat['catimg']) {
-                // om posten har en bild:
-               echo $follow['NumberOfFollowers'];
-            } else {
-               echo "inga följare";
-            }
        
-    }
-
-*/
-
-
-
 
         if ($_SESSION['id'] != $_GET['id']) {
             if (isset($_GET['id'])) {
