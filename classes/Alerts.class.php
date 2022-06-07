@@ -24,15 +24,6 @@ class Alerts
     return $result;
 
 
-    /*  $result = $this->db->query($sql);
-        if ($result) {
-            // result is garanteed to be an object here since a select query was preformed
-            if ($result->num_rows) {
-              return true;
-            }
-          }
-          return false;       
-            //}  */
   }
   public function deleteAlert($id)
   {
