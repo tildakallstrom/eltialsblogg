@@ -10,13 +10,7 @@ if (!isset($_SESSION['username'])) {
         header('Location: index.php');
     }
 }
-/*
- if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
-    header("Location: login.php?message=2");
-} else {
-    // echo "<span class='loggedin'>Du är inloggad som " . $_SESSION['username'] . "</span>";
-   // echo $_SESSION['id'];
-} */
+
 
 
 include('includes/header.php');
