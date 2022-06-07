@@ -9,7 +9,6 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
     header("Location: login.php?message=2");
 } else {
     // echo "<span class='loggedin'>Du är inloggad som " . $_SESSION['username'] . "</span>";
-    // echo "<span class='loggedin'>Du är inloggad som " . $_SESSION['username'] . "</span>";
 }
 include('includes/header.php');
 ?>
