@@ -8,7 +8,7 @@ include_once('config.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eltials Blogg</title> <!-- titel på sidan -->
+    <title>Eltials Blogg</title> 
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="icon" type="image/png" href="bilder/favicon.png">
 </head>
@@ -16,7 +16,6 @@ include_once('config.php');
 <body>
     <header>
         <div class='headerdesktop'>
-            <!-- olika headers för olika storlekar på skärm -->
             <a href="https://tildakallstrom.se/skola/eltialsblogg/index.php"><img src='bilder/logowhite.png' alt='Eltials Ragdoll Logo' class='logodesktop'></a>
             <div class="headermenu">
                 <div>
@@ -34,7 +33,6 @@ include_once('config.php');
                         </li>
 
                         <?php
-                        //följande menyval finns bara för inloggade användare
                         if (isset($_SESSION['username'])) {
                         ?>
                             <li class='meny'>
@@ -48,7 +46,6 @@ include_once('config.php');
                         }
                         ?>
                         <?php
-                        //följande menyval finns bara för icke inloggade användare
                         if (!isset($_SESSION['username'])) {
                         ?>
                             <li class='meny'><a href="login.php">Logga in</a></li>
@@ -56,13 +53,10 @@ include_once('config.php');
                         }
                         ?>
 
-
                         <?php
                         if (isset($_SESSION['username'])) {
                             $username = $_SESSION['username'];
-                            //echo "<span class='loggedin'>Hej $username!</span>";
                         ?>
-
                             <li class='meny'><a href="profile.php">Min profil</a></li>
                             <li class='meny'><a href="logout.php">Logga ut</a></li>
                         <?php
@@ -81,7 +75,6 @@ include_once('config.php');
                     <div class="linetwo"></div>
                     <div class="linethree"></div>
                 </div>
-                <!-- mobilmenyns navigering -->
             </div>
 
             <nav class="navbar">
@@ -94,7 +87,6 @@ include_once('config.php');
                     </li>
 
                     <?php
-                    //följande menyval finns bara för inloggade användare
                     if (isset($_SESSION['username'])) {
                     ?>
                         <li class='meny'>
@@ -108,7 +100,6 @@ include_once('config.php');
                     }
                     ?>
                     <?php
-                    //följande menyval finns bara för icke inloggade användare
                     if (!isset($_SESSION['username'])) {
                     ?>
                         <li class='meny'><a href="login.php">Logga in</a></li>
@@ -116,13 +107,10 @@ include_once('config.php');
                     }
                     ?>
 
-
                     <?php
                     if (isset($_SESSION['username'])) {
                         $username = $_SESSION['username'];
-                        //echo "<span class='loggedin'>Hej $username!</span>";
                     ?>
-
                         <li class='meny'><a href="profile.php">Min profil</a></li>
                         <li class='meny'><a href="logout.php">Logga ut</a></li>
                     <?php
@@ -137,7 +125,6 @@ include_once('config.php');
                 <nav class='rightnav'>
                     <ul>
                         <?php
-                        //följande menyval finns bara för icke inloggade användare
                         if (!isset($_SESSION['username'])) {
                         ?>
                             <li class='meny'><a href="login.php">Logga in</a></li>
@@ -146,11 +133,8 @@ include_once('config.php');
                         ?>
 
                         <?php
-                        //menu for logged in user
                         if (isset($_SESSION['username'])) {
-                            //echo "<span class='loggedin'>Hej $username!</span>";
                         ?>
-
                             <li class='meny'><a href="profile.php">Profil</a></li>
                         <?php
                         }
@@ -160,7 +144,6 @@ include_once('config.php');
             </div>
         </div>
         <script>
-            // linkstyling
             let navElement = document.getElementById("navigation");
 
             for (let i = 0; i < navElement.childElementCount; i++) {

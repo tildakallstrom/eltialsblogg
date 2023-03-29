@@ -17,10 +17,10 @@
 
                     <?php
                     //contactform
-                    if (isset($_POST['submit'])) { //if submit is clicket
-                        $to = "tildakallstrom@gmail.com"; // send email to
-                        $from = $_POST['eemail']; // from
-                        $name = $_POST['nname']; //senders name
+                    if (isset($_POST['submit'])) { 
+                        $to = "tildakallstrom@gmail.com"; 
+                        $from = $_POST['eemail']; 
+                        $name = $_POST['nname']; 
                         $subject = "Form submission";
                         $subject2 = "Copy of your form submission";
                         $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
@@ -29,12 +29,11 @@
                         $headers = "From:" . $from;
                         $headers2 = "From:" . $to;
                         mail($to, $subject, $message, $headers);
-                        mail($from, $subject2, $message2, $headers2); // create copy of message to sender
+                        mail($from, $subject2, $message2, $headers2); 
                         echo "<p>Mailet är skickat. Tack " . $name . ", vi återkommer så snart vi kan.</p>";
                         echo $message2;
                     }
                     ?>
-                    <!-- form -->
                     <form action="#" method="post" class="contactform">
                         <label for="nname" class="flabel">Ditt namn:</label><br> <input type="text" name="nname" id="nname" class="fname"><br>
                         <label for="eemail" class="flabel">Din email:</label><br> <input type="text" name="eemail" id="eemail" class="femail"><br>
@@ -78,11 +77,6 @@
     <script src='./script/textexpand.js'></script>
     <script src='./script/hide.js'></script>
 </footer>
-
-
-
-
-
 
 </body>
 

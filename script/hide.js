@@ -1,4 +1,3 @@
-// change "läs mer" to "dölj"
 function myFunction() {
   let dots = document.getElementById("dots");
   let moreText = document.getElementById("more");
@@ -14,6 +13,7 @@ function myFunction() {
     moreText.style.display = "inline";
   }
 }
+
 function myFunctionOne() {
   let dotsone = document.getElementById("dotsone");
   let moreTextone = document.getElementById("moreone");
@@ -29,6 +29,7 @@ function myFunctionOne() {
     moreTextone.style.display = "inline";
   }
 }
+
 function myFunctionTwo() {
   let dotstwo = document.getElementById("dotstwo");
   let moreTexttwo = document.getElementById("moretwo");
@@ -44,6 +45,7 @@ function myFunctionTwo() {
     moreTexttwo.style.display = "inline";
   }
 }
+
 function myFunctionThree() {
   let dotsthree = document.getElementById("dotsthree");
   let moreTextthree = document.getElementById("morethree");
@@ -59,6 +61,7 @@ function myFunctionThree() {
     moreTextthree.style.display = "inline";
   }
 }
+
 function myFunctionFour() {
   let dotsfour = document.getElementById("dotsfour");
   let moreTextfour = document.getElementById("morefour");
@@ -74,6 +77,7 @@ function myFunctionFour() {
     moreTextfour.style.display = "inline";
   }
 }
+
 function myFunctionFive() {
   let dotsfive = document.getElementById("dotsfive");
   let moreTextfive = document.getElementById("morefive");

@@ -2,7 +2,6 @@
 //Tilda Källström 2022
 class Cats
 {
-    //properties
     private $db;
     private $catid;
     private $userid;
@@ -23,7 +22,6 @@ class Cats
         }
     }
 
-    //get all the cats from a specific user
     public function getCatsFromOwner()
     {
         $userid = $_SESSION['username'];
@@ -31,6 +29,7 @@ class Cats
         $result = $this->db->query($sql);
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
+
     public function getCatsFromUser(): array
     {
         $id = $_GET['id'];
@@ -41,7 +40,6 @@ class Cats
 
     public function addCat($ownerid, $userid, $name, $catimg, $birth, $mother, $father, $merits)
     {
-        //Control if correct values
         if (!$this->setName($name)) {
             return false;
         }
@@ -98,7 +96,6 @@ class Cats
         }
     }
 
-    //delete cat
     public function deleteCat($catid)
     {
         $catid = intval($catid);
@@ -106,8 +103,6 @@ class Cats
         return $this->db->query($sql);
     }
 
-
-    //get one cat
     public function getCatFromId($catid)
     {
         $catid = intval($catid);
@@ -117,7 +112,6 @@ class Cats
         return $row;
     }
 
-    //update cat
     public function updateCat($name, $birth, $mother, $father, $merits, $catid)
     {
         $catid = intval($catid);
@@ -146,12 +140,12 @@ class Cats
         if (filter_var($name)) {
             $name = strip_tags(html_entity_decode($name), '<p>');
             $this->name = $this->db->real_escape_string($name);
-            //$this->title = $this->db->real_escape_string($title);
             return true;
         } else {
             return false;
         }
     }
+
     public function setMother($mother)
     {
         if (filter_var($mother)) {
@@ -162,6 +156,7 @@ class Cats
             return false;
         }
     }
+
     public function setFather($father)
     {
         if (filter_var($father)) {
@@ -184,6 +179,7 @@ class Cats
             return false;
         }
     }
+    
     public function setBirth($birth)
     {
         if (filter_var($birth)) {

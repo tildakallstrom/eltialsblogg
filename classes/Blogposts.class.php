@@ -2,23 +2,18 @@
 //Tilda Källström 2022 
 class Blogposts
 {
-    //properties
     private $db;
     private $title;
     private $content;
 
-
-
     function __construct()
     {
-        //connect to db
         $this->db = new mysqli(DBHOST, DBUSER, DBPASS, DBDATABASE);
         if ($this->db->connect_errno > 0) {
             die("Fel vid anslutning: " . $this->db->connect_error);
         }
     }
 
-    //get all blogposts
     public function getBlogposts(): array
     {
         $sql = "SELECT * FROM blogposts JOIN user where user.username = blogposts.author ORDER BY created DESC;";
@@ -26,7 +21,7 @@ class Blogposts
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
-    //get all the blogposts from a specifik user
+    //get all the blogposts from a specific user
     public function getBlogpostsFromAuthor(): array
     {
         $username = $_SESSION['username'];
@@ -43,7 +38,6 @@ class Blogposts
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
-    //get blogpost from postid
     public function getBlogpostFromId($postid)
     {
         $postid = intval($postid);
@@ -52,15 +46,7 @@ class Blogposts
         $row = mysqli_fetch_array($result);
         return $row;
     }
-    /* public function getTitleFromId($id) {
-        $id = intval($id);
-        $sql = "SELECT title FROM blogposts WHERE postid=$postid";
-        $result = $this->db->query($sql);
-        $row = mysqli_fetch_array($result);
-        return $row['title'];
-    } */
 
-    //create blogpost
     public function addBlogpost($author, $authorid, $title, $content, $img)
     {
         //Control if correct values
@@ -70,7 +56,6 @@ class Blogposts
         if (!$this->setContent($content)) {
             return false;
         }
-
 
         //is the file of the right type? 
         if ((($_FILES["image"]["type"] == "image/jpeg") || ($_FILES["image"]["type"] ==
@@ -113,11 +98,10 @@ class Blogposts
             return $result2;
         }
     }
-    //delete blogpost
+
     public function deleteBlogpost($postid)
     {
         $postid = intval($postid);
-        // kollar om det finns en bild i bloggposten
         $sql = "SELECT img FROM blogposts WHERE postid = $postid;";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_array($result);
@@ -129,12 +113,11 @@ class Blogposts
             $sql2 = "DELETE FROM blogposts WHERE postid=$postid;";
             return $this->db->query($sql2);
         } else {
-            // annars raderas bara själva posten från DB
             $sql1 = "DELETE FROM blogposts WHERE postid=$postid;";
             return $this->db->query($sql1);
         }
     }
-    //update post
+
     public function updateBlogpost($title, $content, $postid)
     {
         $postid = intval($postid);
@@ -148,20 +131,18 @@ class Blogposts
         $result = $this->db->query($sql);
         return $result;
     }
-    //set title
+
     public function setTitle($title)
     {
         if (filter_var($title)) {
             $title = strip_tags(html_entity_decode($title), '<p><a><br><i><b><strong><em>');
             $this->title = $this->db->real_escape_string($title);
-            //$this->title = $this->db->real_escape_string($title);
             return true;
         } else {
             return false;
         }
     }
 
-    //set content
     public function setContent($content)
     {
         if (filter_var($content)) {
@@ -173,7 +154,7 @@ class Blogposts
             return false;
         }
     }
-    //get five blogposts
+
     public function getFiveBlogposts(): array
     {
         $sql = "SELECT * FROM blogposts JOIN user where user.username = blogposts.author ORDER BY created DESC LIMIT 5;";
@@ -181,7 +162,7 @@ class Blogposts
 
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
-    //get blogposts from followed users
+
     public function getFollowedPosts(): array
     {
         $username = $_SESSION['username'];
@@ -190,7 +171,7 @@ class Blogposts
         $result = $this->db->query($sql);
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
-    //count comments
+
     public function countComments($postid)
     {
         $postid = intval($postid);

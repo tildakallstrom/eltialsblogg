@@ -21,7 +21,6 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
         if ($_POST["password"] >= 7) {
             if ($_POST["password"] === $_POST["confirm_password"]) {
                 $users = new Users();
-                //är användarnamnet registrerat i db?
                 if ($users->isUserNameTaken($username)) {
                     $message = "<p class='red'>Namnet är taget!</p>";
                 } elseif ($users->isEmailTaken($email)) {
@@ -40,7 +39,6 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
             echo "<p class='red'>Lösenordet måste innehålla minst 7 tecken.</p>";
         }
     }
-
     ?>
     <div class="loginform">
         <form method="post" class="regform">
@@ -76,8 +74,6 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
             <div class="labell"><br>
                 <input type="checkbox" id="confirm" name="confirm" onchange="confirmSave()"><label for="confirm" class="confirmlabel">Jag godkänner lagring av personuppgifter.</label><br><br>
             </div>
-
-
             <input type="submit" value="Skapa användarkonto" class="btnreg" id="saveButton" disabled>
         </form>
     </div>

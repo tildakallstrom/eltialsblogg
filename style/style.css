@@ -1,22 +1,14 @@
-/* 
-Skapad av Tilda Källström 2022
-*/
 @import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
-
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Playfair+Display:wght@400;500&display=swap');
 
-
-/* mjuk scroll vid klicka av topbtn*/
 html {
     scroll-behavior: smooth;
 }
-
 body {
     background-color: white;
     overflow-x: hidden;
 }
-
 .hero-text {
     text-align: center;
     position: absolute;
@@ -25,7 +17,6 @@ body {
     transform: translate(-50%, -50%);
     color: white;
 }
-
 .herobtn {
     border: none;
     border-radius: 40px;
@@ -43,7 +34,6 @@ body {
     margin: auto;
     margin-left: 2em;
 }
-
 .whiteh1 {
     text-align: center;
     color: white;
@@ -55,7 +45,6 @@ body {
     text-shadow: 3px 3px 8px #202020;
 
 }
-
 .meny a {
     color: whitesmoke;
     text-decoration: none;
@@ -63,51 +52,38 @@ body {
     font-size: 0.65em;
     text-transform: uppercase;
 }
-
-/* welcome div under header */
 .welcome {
     top: 0;
     padding-bottom: 1em;
 }
-
-/* höger nav i header*/
 .rightnav {
     right: 0;
     float: right;
     text-align: right;
     width: 100%;
 }
-
-/*högerdel av header*/
 .rightheader {
     float: right;
     right: 0;
     z-index: 999999;
 }
-
 header {
     background-color: rgb(5, 5, 5, 0.2);
     padding: 0;
     top: 0;
-    /*position: fixed; */
     width: 100%;
     max-width: 1500px;
     margin: auto;
     z-index: 999999;
 }
-
-/*välkomsttext högst upp t höger*/
 .loggedin {
     margin-top: -2em;
     float: right;
     text-align: right;
     font-family: 'Lato', sans-serif;
 }
-
-/* till toppen knapp */
 #topBtn {
     z-index: 99;
-    /* flyttar knapp överst */
     position: fixed;
     right: 0;
     margin-right: 20px;
@@ -117,11 +93,9 @@ header {
     background-color: transparent;
     cursor: pointer;
 }
-
 #topBtn:hover {
     opacity: 0.7;
 }
-
 .btnreg {
     font-family: "Lato", sans-serif;
     box-sizing: border-box;
@@ -134,20 +108,16 @@ header {
     padding-bottom: 0.2em;
     padding-left: 1em;
     padding-right: 1em;
-
 }
-
 .down {
     margin-top: 5em;
 }
-
 .alert {
     margin: auto;
     margin-left: 2em;
     margin-top: 2em;
     max-width: 320px;
 }
-
 .alertbtn {
     background-color: rgb(139, 0, 0, 0.7);
     color: white;
@@ -156,16 +126,13 @@ header {
     border-radius: 10px;
     font-size: 0.9em;
 }
-
 .rightp {
     text-align: right;
     color: darkgray;
 }
-
 span {
     font-family: "Lato", sans-serif;
 }
-
 .fname,
 .femail,
 footer .btnreg {
@@ -173,52 +140,42 @@ footer .btnreg {
     max-width: 280px;
     width: 90%;
 }
-
 .btnsearch {
     width: 100% !important;
     margin-top: 1em;
 }
-
 #searchcriteria,
 #searchcriteriacat {
     margin-bottom: 0.5em;
 }
-
 .mykat {
     margin-top: 2em;
     padding: 1em;
 }
-
 .ukat {
     margin-top: 2em;
     padding: 1em;
     max-width: 400px;
     margin: auto;
 }
-
 .b1 {
     margin-top: -1em;
 }
-
 .flabel {
     margin-left: 1em;
 }
-
 .textExpand {
     display: none;
 }
-
 .img {
     width: 100%;
     max-width: 400px;
     margin: auto;
 }
-
 #confirm {
     margin-left: 1em;
     width: 1em;
 }
-
 .catprofile {
     margin-top: -1.8em;
     margin-left: 0.5em;
@@ -226,20 +183,15 @@ footer .btnreg {
     width: 60px;
     height: 60px;
 }
-
 .cath3 {
     margin-left: 2.5em;
 }
-
 .cath33 {
     margin-left: 3em;
 }
-
 .catp {
     margin-top: 1.5em;
 }
-
-/*blogpost div*/
 .post {
     background-color: white;
     margin: auto;
@@ -248,12 +200,9 @@ footer .btnreg {
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
-
 .user {
     max-width: 430px;
-    /* margin: auto; */
 }
-
 .postindex {
     background-color: white;
     width: 430px;
@@ -261,7 +210,6 @@ footer .btnreg {
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
-
 .postt {
     background-color: white;
     margin: auto;
@@ -270,7 +218,6 @@ footer .btnreg {
 
     margin-bottom: 20px;
 }
-
 .post1 {
     margin-top: 2em;
     margin: auto;
@@ -278,7 +225,6 @@ footer .btnreg {
     margin-bottom: 1em;
     border-radius: 20px;
 }
-
 .postone {
     background-color: white;
     margin: auto;
@@ -287,17 +233,13 @@ footer .btnreg {
     border-radius: 5px;
     margin-bottom: 2em;
 }
-
 .centerp {
     text-align: center;
 }
-
 .centerpp {
     text-align: center;
     margin-left: 34%;
 }
-
-/* radera post eller komment knapp*/
 .delete {
     background-color: darkred;
     color: white;
@@ -310,23 +252,17 @@ footer .btnreg {
     text-decoration: none;
     float: right;
 }
-
 .delete:hover {
     cursor: pointer;
 }
-
 .deleteu:hover {
     text-decoration: underline;
     background-color: #580000;
     cursor: pointer;
-
 }
-
 .follow {
     margin-left: -1em;
 }
-
-/* följarknapp*/
 #follow,
 #unfollow {
     margin: auto;
@@ -335,34 +271,26 @@ footer .btnreg {
     margin-right: 5em;
     float: right;
 }
-
-/* bloggbild*/
 .blogimg {
     max-width: 200px;
 }
-
 .h2profile {
     text-align: center;
 }
-
 .changeprofile {
     width: 350px;
     margin: auto;
 }
-
 .profileform {
     max-width: 400px;
     margin: auto;
     padding: 10px;
     border-radius: 20px;
 }
-
 .profile,
 textarea {
     margin-left: 1em !important;
 }
-
-/* profilbild som visas i samband med post */
 .profileimg {
     margin-top: 0.5em;
     margin-left: 0.5em;
@@ -370,7 +298,6 @@ textarea {
     width: 60px;
     height: 60px;
 }
-
 .profileimg1 {
     margin-top: 0.5em;
     margin-left: 0.5em;
@@ -378,21 +305,17 @@ textarea {
     max-width: 100px;
     height: auto;
 }
-
 .userp {
     font-family: 'Lato', sans-serif;
     margin-top: -2.5em;
     margin-left: 3.4em;
 }
-
 .postuser {
     margin-top: -8em;
 }
-
 .userlink {
     margin-top: -5em;
 }
-
 .created {
     font-style: italic;
     font-size: 0.8em;
@@ -401,13 +324,11 @@ textarea {
     width: 100%;
     padding-top: 0.8em;
 }
-
 .content {
     width: 40ch;
     word-break: break-all;
     white-space: pre-wrap;
 }
-
 .current {
     color: lightseagreen;
     text-decoration-line: underline;
@@ -418,67 +339,55 @@ textarea {
     border: none;
     border-radius: 0.8em;
 }
-
 #profileimg {
     width: 98%;
 }
-
 #image {
     width: 100%;
     margin-bottom: 10px;
 }
-
 #register {
     text-decoration: underline;
     max-width: 280px;
     margin: auto;
     text-align: center;
 }
-
 #register:hover {
     text-decoration: underline;
     color: #005254;
 }
-
 a {
     color: #001515;
     text-decoration: none;
 }
-
 h1 {
     font-family: 'Playfair Display', serif;
 }
-
 h2 {
     font-family: 'IBM Plex Serif', serif;
     font-weight: 300;
     margin-left: 0.4em;
     font-size: 2em;
 }
-
 #regh2 {
     font-family: 'IBM Plex Serif', serif;
     margin-left: -0.2em;
     font-size: 2em;
 }
-
 .centerh3 {
     text-align: center;
     margin-top: 2em;
     margin-bottom: 1em;
 }
-
 h3 {
     font-family: 'IBM Plex Serif', serif;
     margin-left: 0.6em;
     margin-bottom: -0.5em;
     font-size: 1.5em;
 }
-
 input {
     font-family: 'Lato', sans-serif;
 }
-
 textarea {
     font-family: 'Lato', sans-serif;
     white-space: pre-wrap;
@@ -487,7 +396,6 @@ textarea {
     padding: 5px;
     max-width: 400px;
 }
-
 p {
     max-width: 40ch;
     font-family: 'Lato', sans-serif;
@@ -497,7 +405,6 @@ p {
     white-space: pre-wrap;
     word-break: normal;
 }
-
 .p1 {
     max-width: 40ch;
     font-family: 'Lato', Sans-serif;
@@ -507,42 +414,33 @@ p {
     white-space: pre-wrap;
     word-break: keep-all;
 }
-
 label {
     font-family: 'Lato', Sans-serif;
 }
-
 li {
     font-family: 'Lato', Sans-serif;
     font-size: 1.3em;
 }
-
 .date {
     font-size: 0.8em;
     margin-left: 0.4em;
     margin-top: 0.2em;
     font-weight: bold;
 }
-
 a:hover {
     text-decoration: underline;
 }
-
-
 .btnregg:hover,
 .btnreg:hover {
     background-color: #014d04;
     color: white;
     cursor: pointer;
     text-decoration: underline;
-
 }
-
 #message,
 #messagel {
     margin-left: 1em;
 }
-
 .btnreg11 {
     background-color: #005254;
     color: white;
@@ -556,7 +454,6 @@ a:hover {
     margin-top: 10px;
     margin-left: 1em;
 }
-
 .readmore {
     background-color: #005254;
     color: white;
@@ -569,7 +466,6 @@ a:hover {
     text-decoration: none;
     border: solid 2px;
 }
-
 .profileinput {
     background-color: #005254;
     color: white;
@@ -581,22 +477,18 @@ a:hover {
     margin-top: 10px;
     width: 200px;
 }
-
 .btnreg:hover {
     cursor: pointer;
     text-decoration: underline;
 }
-
 .btnreg11:hover {
     cursor: pointer;
     text-decoration: underline;
 }
-
 .readmore:hover {
     cursor: pointer;
     text-decoration: underline;
 }
-
 .btnreg1 {
     background-color: #005254;
     color: white;
@@ -608,12 +500,10 @@ a:hover {
     margin-top: 10px;
     margin: auto;
 }
-
 .btnreg1:hover {
     cursor: pointer;
     text-decoration: underline;
 }
-
 .btnupdate {
     background-color: #005254;
     color: white;
@@ -629,13 +519,11 @@ a:hover {
     float: right;
     max-width: 100px;
 }
-
 .btnupdate:hover {
     cursor: pointer;
     text-decoration: underline;
     max-width: 100px;
 }
-
 .updatebtn {
     background-color: #03254c;
     color: white;
@@ -646,22 +534,18 @@ a:hover {
     text-decoration: none;
     margin-top: -1em;
 }
-
 .updatebtn:hover {
     background-color: white;
     color: #03254c;
     text-decoration: underline;
 
 }
-
-/*sök anv*/
 .searchforuser {
     padding-bottom: 1em;
     padding-left: 1em;
     max-width: 420px;
     margin: auto;
 }
-
 .mainblog {
     background-color: #F3F3EC;
     margin: auto;
@@ -671,42 +555,32 @@ a:hover {
     padding-bottom: 2em;
     box-shadow: 3px 3px 3px 3px #ccc;
 }
-
 .message {
     width: 200px;
 }
-
-/*footer */
-
-/* footer styling*/
 .gridfooter {
     display: grid;
     grid-template-columns: 1fr 0.5fr 1fr;
 }
-
 .leftline,
 .rightline {
     border-bottom: solid 1px black;
     width: 100%;
     margin-top: -1em;
 }
-
 .footerlogo,
 .footerimg {
     max-width: 200px;
     margin: auto;
     margin-bottom: -0.4em;
 }
-
 footer {
-    /*background-color: rgb(5, 5, 5, 0.2);*/
     background-color: #F3F3EC;
     color: black;
     margin-bottom: -1em;
     padding: 1em;
     bottom: 0;
 }
-
 .footermenu {
     margin-top: 2em;
     color: black;
@@ -716,13 +590,11 @@ footer {
     font-size: 1.4rem;
     margin-left: 1em;
 }
-
 .fmenu {
     color: black;
     text-decoration: none;
     font-size: 0.8em;
 }
-
 footer p {
     max-width: 680px;
     padding-top: 1em;
@@ -731,45 +603,36 @@ footer p {
     margin: auto;
     color: white;
 }
-
 footer h2 {
     color: white;
     margin-left: 0.7em;
 }
-
 .socialmediafooter {
     background-color: black;
     padding-bottom: 1em;
 }
-
 .whitecenterp {
     text-align: center;
 }
-
 .socialimg {
     max-width: 50px;
 }
-
 .centerpblack {
     color: black;
     text-align: center;
 }
-
 .centerpblack a {
     color: black;
 }
-
 .socialmediafootergrid {
     display: grid;
     grid-template-columns: 1fr 0.5fr;
     max-width: 180px;
     margin: auto;
 }
-
 label {
     margin-bottom: 5px;
 }
-
 input {
     width: 80%;
     max-width: 400px;
@@ -777,7 +640,6 @@ input {
     background-color: #f8f8f7;
     border-radius: 5px;
 }
-
 textarea {
     width: 50%;
     max-width: 280px;
@@ -789,7 +651,6 @@ textarea {
     margin-bottom: 1em;
     border-radius: 5px;
 }
-
 input[type=submit] {
     padding: 12px 20px;
     margin: 8px 0;
@@ -798,26 +659,19 @@ input[type=submit] {
     background-color: #003302;
     color: white;
 }
-
 input[type=submit]:hover {
     background-color: #014d04;
     color: white;
     cursor: pointer;
     text-decoration: underline;
-
 }
-
 .blackp {
     color: black;
 }
-
-
 .password {
     margin-left: 1em;
 }
-
 @media only screen and (max-width: 400px) {
-
     input[type=text],
     input[type=email],
     select,
@@ -832,9 +686,7 @@ input[type=submit]:hover {
         margin: auto;
     }
 }
-
 @media only screen and (min-width: 400px) and (max-width: 700px) {
-
     input[type=text],
     input[type=email],
     select,
@@ -848,7 +700,6 @@ input[type=submit]:hover {
         font-family: 'Lato', Sans-serif;
         margin: auto;
     }
-
     .username,
     .password,
     .btnreg,
@@ -857,66 +708,52 @@ input[type=submit]:hover {
         min-width: 280px;
     }
 }
-
 @media only screen and (max-width: 700px) {
-
     body {
         overflow-x: hidden;
     }
-
     .gridprofile {
         max-width: 700px;
         margin: auto;
         margin-top: 3em;
         padding-top: 2em;
     }
-
     .bt1 {
         max-width: 100px;
         margin: auto;
     }
-
     .main5,
     .main1 {
         overflow: hidden;
         max-width: 95%;
         margin: auto;
     }
-
     .left1,
     .right1,
     .middled {
         max-width: 90%;
         margin: auto;
     }
-
     .labell {
         margin-left: 1em;
         width: 100%;
     }
-
     .confirmlabel {
-
         padding-right: 2em;
         width: 100%;
         margin: auto;
-
         font-size: 0.7em;
     }
-
     .left,
     .right {
         max-width: 400px;
         margin: auto;
     }
-
     .btndiv {
         width: 100%;
         max-width: 220px;
         margin: auto;
-
     }
-
     .btnregg {
         font-family: "Lato", sans-serif;
         box-sizing: border-box;
@@ -932,15 +769,12 @@ input[type=submit]:hover {
         padding-left: 2em;
         padding-right: 2em;
     }
-
     .btnregg:hover {
         background-color: #014d04;
         color: white;
         cursor: pointer;
         text-decoration: underline;
-
     }
-
     .btnbig {
         box-sizing: border-box;
         border-radius: 10px;
@@ -955,43 +789,33 @@ input[type=submit]:hover {
         padding-left: 2em;
         padding-right: 2em;
     }
-
     .btnbig {
         width: 100%;
-
     }
-
     .btnbig:hover {
         background-color: #014d04;
         color: white;
         cursor: pointer;
         text-decoration: underline;
-
     }
-
     .regform,
     .loginform {
         margin-left: 2em;
     }
-
     .footermiddle {
         padding-left: 1em;
         padding-right: 1em;
         max-width: 480px;
         margin: auto;
     }
-
     .title,
     .firstname,
     .lastname,
     .email {
         width: 100%;
     }
-
 }
-
 @media only screen and (min-width: 700px) {
-
     .username,
     .password,
     .btnreg,
@@ -999,7 +823,6 @@ input[type=submit]:hover {
         width: 100%;
         min-width: 280px;
     }
-
     .gridprofile {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1007,17 +830,12 @@ input[type=submit]:hover {
         max-width: 700px;
         margin: auto;
     }
-
     .labell {
         min-width: 500px;
-
     }
-
     .btnbig {
         width: 100%;
-
     }
-
     .confirmlabel {
         padding-left: 1em;
         padding-right: 2em;
@@ -1025,7 +843,6 @@ input[type=submit]:hover {
         margin: auto;
         font-size: 0.7em;
     }
-
     .footermiddle {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1035,21 +852,16 @@ input[type=submit]:hover {
         max-width: 1000px;
         margin: auto;
     }
-
-    /*widget i footer*/
     .widget2 {
         max-width: 300px;
         margin-left: 30%;
         top: 0;
     }
-
     .btndiv {
         width: 100%;
         max-width: 280px;
         margin: auto;
-
     }
-
     .btnregg {
         box-sizing: border-box;
         border-radius: 10px;
@@ -1064,15 +876,12 @@ input[type=submit]:hover {
         padding-left: 2em;
         padding-right: 2em;
     }
-
     .btnregg:hover {
         background-color: #014d04;
         color: white;
         cursor: pointer;
         text-decoration: underline;
-
     }
-
     .main {
         background-color: #F3F3EC;
         display: grid;
@@ -1083,9 +892,7 @@ input[type=submit]:hover {
         width: 100%;
         min-height: 70vh;
         box-shadow: 3px 3px 5px 5px #ccc;
-
     }
-
     input[type=text],
     input[type=email],
     select,
@@ -1099,23 +906,17 @@ input[type=submit]:hover {
         font-family: 'Lato', Sans-serif;
         margin: auto;
     }
-
     .fname,
     .femail {
         max-widtH: 280px;
     }
-
     .btnreg {
         max-width: 280px;
     }
-
     .title {
         width: 100%;
     }
 }
-
-
-/* mobilstyling*/
 @media screen and (max-width: 1100px) {
     .deleteu {
         background-color: darkred;
@@ -1127,7 +928,6 @@ input[type=submit]:hover {
         text-decoration: none;
         margin-left: 56%;
     }
-
     .hero-image {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../bilder/dsc_9268.jpg");
         max-height: 600px;
@@ -1140,7 +940,6 @@ input[type=submit]:hover {
         margin: auto;
         margin-top: -6em;
     }
-
     .hero-text {
         text-align: center;
         position: absolute;
@@ -1150,35 +949,28 @@ input[type=submit]:hover {
         transform: translate(-50%, -50%);
         color: white;
     }
-
     body {
         background-color: white;
         width: 100%;
     }
-
     .meny1 {
         margin-top: 10px;
         margin-right: 5px;
     }
-
     .centerpp {
         text-align: center;
         margin-left: -5px;
     }
-
     .meny {
         margin-right: 0.1em;
         list-style-type: none;
         text-decoration: none;
     }
-
-    /* mobilmeny*/
     .navbar {
         position: fixed;
         top: 0;
         left: 60px;
         background-color: #95ad93;
-
         width: 80%;
         height: 90%;
         overflow: hidden;
@@ -1187,19 +979,14 @@ input[type=submit]:hover {
         transition: transform 0.4s ease;
         z-index: 10000;
     }
-
-    /* visa meny */
     .showNav {
         transform: translateY(0);
         z-index: 10000;
     }
-
     .mobile:hover {
         cursor: pointer;
         z-index: 999999999999;
     }
-
-    /* meny som slide down*/
     .navbar ul {
         width: 80%;
         height: 100%;
@@ -1207,12 +994,10 @@ input[type=submit]:hover {
         display: flex;
         flex-flow: column nowrap;
     }
-
     .navbar li {
         margin-bottom: 1em;
         margin-top: 1em;
     }
-
     .navbar ul li a {
         color: black;
         padding-bottom: 10px;
@@ -1220,12 +1005,10 @@ input[type=submit]:hover {
         font-family: 'Lato', sans-serif;
         font-size: 1.4rem;
     }
-
     .navbar ul li a:hover,
     .navbar ul li a:focus {
         color: white;
     }
-
     .lineone,
     .linetwo,
     .linethree {
@@ -1236,21 +1019,15 @@ input[type=submit]:hover {
         margin: 7px;
         transition: 0.5s;
     }
-
-    /* transform menydivs vid visning av meny*/
     .change .lineone {
         transform: rotate(45deg) translate(-1px, 10px);
     }
-
     .change .linetwo {
         opacity: 0;
     }
-
     .change .linethree {
         transform: rotate(-45deg) translate(5px, -19px);
     }
-
-    /*mobilheader*/
     .headermobile {
         width: 100%;
         height: 50px;
@@ -1258,31 +1035,25 @@ input[type=submit]:hover {
         grid-template-columns: 1fr 0.5fr 1fr;
         z-index: 9999999999999999;
     }
-
     .loggedin {
         color: #b7e2fc;
         font-family: 'Lato', Sans-serif;
     }
-
     .loginform {
         margin: auto;
         margin-left: 1em;
     }
-
     .regform {
-
         max-width: 280px;
         margin: auto;
         padding-left: 1em;
         padding-right: 1em;
     }
-
     .expander li {
         list-style-type: none;
         max-width: 300px;
         margin: auto;
     }
-
     .readMore {
         box-sizing: border-box;
         border-radius: 10px;
@@ -1295,22 +1066,16 @@ input[type=submit]:hover {
         padding-left: 2em;
         padding-right: 2em;
     }
-
     .firstname1 {
-
         margin-bottom: 0.7em;
         width: 85%;
         padding: 0.5em;
         border: none;
         border-radius: 5px;
-
     }
-
     .welcome {
         padding-top: 1.8em;
     }
-
-    /* text i welcome div*/
     .h1top {
         margin-top: 1em;
         color: black;
@@ -1319,19 +1084,14 @@ input[type=submit]:hover {
         margin-left: 1em;
         margin-right: 1em;
     }
-
-    /*göm header för desktop*/
     .headerdesktop {
         display: none;
     }
-
     .logomobile {
         display: block;
         width: 70px;
         margin: auto;
     }
-
-    /*maindiv */
     .main {
         background-color: #F3F3EC;
         margin: auto;
@@ -1341,7 +1101,6 @@ input[type=submit]:hover {
         margin: auto;
         box-shadow: 3px 3px 3px 3px #ccc;
     }
-
     .main4,
     .main5 {
         background-color: #F3F3EC;
@@ -1351,7 +1110,6 @@ input[type=submit]:hover {
         padding-bottom: 2em;
         margin: auto;
     }
-
     .main3 {
         background-color: #F3F3EC;
         margin: auto;
@@ -1360,7 +1118,6 @@ input[type=submit]:hover {
         padding-bottom: 2em;
         box-shadow: 3px 3px 3px 3px #ccc;
     }
-
     .main1 {
         background-color: #F3F3EC;
         overflow: hidden;
@@ -1370,8 +1127,6 @@ input[type=submit]:hover {
         min-height: 70vh;
         box-shadow: 3px 3px 5px 5px #ccc;
     }
-
-
     .mainblog {
         background-color: #F3F3EC;
         margin: auto;
@@ -1381,20 +1136,17 @@ input[type=submit]:hover {
         padding-bottom: 2em;
         box-shadow: 3px 3px 3px 3px #ccc;
     }
-
     .left {
         overflow: hidden;
         width: 100%;
         margin: auto;
         margin-bottom: 1em;
     }
-
     .right {
         overflow: hidden;
         margin: auto;
         width: 100%;
     }
-
     .post,
     .postt {
         width: 90%;
@@ -1403,46 +1155,35 @@ input[type=submit]:hover {
         padding-bottom: 10px;
         margin-bottom: 20px;
     }
-
-
     .post1 {
         width: 95%;
         margin-bottom: 1em;
     }
-
     .blogimg {
         width: 95%;
     }
-
     .changeprofile {
         width: 90%;
         margin: auto;
     }
-
     .profilechange {
         width: 250px;
         margin: auto;
-
     }
-
     .content {
         width: 90%;
         word-break: break-all;
     }
-
     .right1 {
         overflow: hidden;
     }
-
     .left1 {
         overflow: hidden;
     }
-
     textarea {
         width: 90%;
     }
 }
-
 @media screen and (max-width: 900px) {
     .alertbtn {
         padding-top: 2px;
@@ -1451,7 +1192,6 @@ input[type=submit]:hover {
         padding-right: 5px;
     }
 }
-
 @media screen and (min-width: 1100px) {
     .deleteu {
         background-color: darkred;
@@ -1463,7 +1203,6 @@ input[type=submit]:hover {
         text-decoration: none;
         margin-left: 63%;
     }
-
     .hero-image {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../bilder/dsc_9268.jpg");
         min-height: 420px;
@@ -1478,20 +1217,15 @@ input[type=submit]:hover {
         margin: auto;
         margin-top: -7em;
     }
-
     .headermobile {
         display: none;
     }
-
-
-    /* text i welcome div*/
     .h1top {
         margin-top: 1em;
         color: black;
         text-align: center;
         width: 100%;
     }
-
     .headerdesktop {
         display: grid;
         grid-template-columns: 0.4fr 0.1fr 1fr;
@@ -1502,11 +1236,9 @@ input[type=submit]:hover {
         max-width: 1500px;
         margin: auto;
     }
-
     #expander li {
         list-style-type: none;
     }
-
     .btnbig,
     .readMore {
         box-sizing: border-box;
@@ -1522,25 +1254,20 @@ input[type=submit]:hover {
         padding-left: 2em;
         padding-right: 2em;
     }
-
     .btnbig {
         width: 100%;
     }
-
     .btnbig:hover,
     .readMore:hover {
         background-color: #014d04;
         color: white;
         cursor: pointer;
     }
-
     .btndiv {
         width: 100%;
         max-width: 350px;
         margin: auto;
-
     }
-
     .btnregg {
         box-sizing: border-box;
         border-radius: 10px;
@@ -1554,51 +1281,42 @@ input[type=submit]:hover {
         padding-left: 2em;
         padding-right: 2em;
     }
-
     .btnregg:hover {
         background-color: #014d04;
         color: white;
         cursor: pointer;
     }
-
     .profilechange {
         width: 250px;
         margin: auto;
     }
-
     .meny {
         margin-top: 0.1em;
         display: inline-block;
         list-style-type: none;
         text-decoration: none;
     }
-
     .logodesktop {
         margin-top: -0.2em;
         width: 180px;
         float: left;
         margin-left: 0.2em;
     }
-
     a {
         padding: 14px 3px;
         text-decoration: none;
     }
-
     .loginform {
         margin: auto;
         margin-left: 38%;
         width: 200px;
     }
-
     .regform {
         max-width: 280px;
         margin: auto;
-
         padding-left: 1em;
         padding-right: 1em;
     }
-
     .firstname1 {
         box-shadow: 2px 1px 3px 2px #ccc;
         margin-bottom: 0.7em;
@@ -1607,7 +1325,6 @@ input[type=submit]:hover {
         border: none;
         border-radius: 0.8em;
     }
-
     .title,
     .firstname,
     .lastname,
@@ -1620,7 +1337,6 @@ input[type=submit]:hover {
         border-radius: 5px;
         padding: 0.3em;
     }
-
     .main1 {
         background-color: #F3F3EC;
         margin: auto;
@@ -1629,7 +1345,6 @@ input[type=submit]:hover {
         min-height: 70vh;
         box-shadow: 3px 3px 5px 5px #ccc;
     }
-
     .main2 {
         background-color: #F3F3EC;
         display: grid;
@@ -1642,7 +1357,6 @@ input[type=submit]:hover {
         min-height: 70vh;
         box-shadow: 3px 3px 3px 3px #ccc;
     }
-
     .main3 {
         background-color: #F3F3EC;
         margin: auto;
@@ -1652,20 +1366,17 @@ input[type=submit]:hover {
         min-height: 70vh;
         box-shadow: 3px 3px 5px 5px #ccc;
     }
-
     .main33 {
         display: grid;
         grid-template-columns: 1fr 2fr;
         margin: auto;
     }
-
     .main34 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin: auto;
         max-width: 800px;
     }
-
     .main4 {
         overflow: hidden;
         display: grid;
@@ -1676,7 +1387,6 @@ input[type=submit]:hover {
         width: 100%;
         min-height: 70vh;
     }
-
     .main5 {
         overflow: hidden;
         display: grid;
@@ -1689,62 +1399,51 @@ input[type=submit]:hover {
         min-height: 70vh;
         border-bottom: solid lightgray;
     }
-
-    /*about */
     .about {
         margin: auto;
         width: 430px;
     }
-
     .left {
         margin-left: 20%;
         float: right;
         width: 50%;
         position: relative;
     }
-
     .right {
         margin-left: 10px;
         padding-left: 10px;
         padding-right: 10px;
         width: 100%;
     }
-
     .right1 {
         margin-left: 10px;
         padding-left: 10px;
         padding-right: 10px;
         width: 90%;
     }
-
     .left1 {
         margin-left: 10px;
         padding-left: 10px;
         padding-right: 10px;
         width: 90%;
     }
-
     .left2 {
         margin-left: 10px;
         padding-left: 10px;
         padding-right: 10px;
         width: 80%;
     }
-
     .right2 {
         margin-left: 10px;
         padding-left: 10px;
         padding-right: 10px;
         width: 80%;
     }
-
     .blogimg {
         max-width: 200px;
     }
 }
-
 @media screen and (min-width: 1300px) {
-
     .hero-image {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../bilder/dsc_9268.jpg");
         min-height: 500px;

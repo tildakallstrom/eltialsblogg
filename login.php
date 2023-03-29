@@ -1,12 +1,10 @@
 <?php
 //Tilda Källström 2022
 include_once("config.php");
-//kontrollera inloggning
 if (isset($_POST['username'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $users = new Users();
-    //login
     if ($id = $users->loginUser($username, $password)) {
         $_SESSION['username'] = $username;
         $_SESSION['id'] = $id;
@@ -49,8 +47,6 @@ include('includes/header.php');
             <br>
             <br>
             <input type="submit" value="Logga in" class="btnreg">
-
-
         </form>
         <br>
         <div class="btndiv">

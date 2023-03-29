@@ -5,15 +5,12 @@ include_once('config.php');
 include('includes/header.php');
 ?>
 <?php
-//kontroll om sessionsvariabel finns
 if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
     header("Location: login.php?message=2");
 } else {
     // echo "<span class='loggedin'>Du är inloggad som " . $_SESSION['username'] . "</span>";
-    // echo "<span class='loggedin'>Du är inloggad som " . $_SESSION['username'] . "</span>";
 }
 ?>
-
 <script src="https://cdn.ckeditor.com/4.16.0/basic/ckeditor.js"></script>
 <div class="welcome">
     <?php
@@ -30,19 +27,14 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
     $alertlist = $alert->getAlerts($username);
     $username = $_SESSION['username'];
     foreach ($alertlist as $alert) {
-
         if ($alert['author'] == $_SESSION['username']) {
-            // om posten har en bild:
             echo "<div class='alert'><a href='blogpost.php?postid=" . $alert['postid'] . "' class='alertbtn'>" . $alert['user'] . " kommenterade på " . $alert['title'] . '</a></div>';
         }
     }
     ?>
     <div class="main5">
         <div class="left1">
-
-
             <?php
-
             $user = new Users();
             $update_user = $user->getUserFromUsername($username);
             $profileimg = $update_user['profileimg'];
@@ -54,11 +46,9 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
                 <br><input type="file" name="profileimg" id="profileimg" /> <br><br>
                 <input type="submit" name="uploadprofile" value='Byt profilbild' class="btnbig"><br><br>
             </form><br>
-
             <?php
             $user = new Users();
             if (isset($_POST['uploadprofile'])) {
-
                 if ($user->updateProfileimg()) {
                     echo '<script type="text/javascript">
               alert("Uppladdning av profilbild lyckades.");
@@ -69,56 +59,41 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
                 }
             }
             ?>
-
             <h2 class='h2profile'>Mina katter</h2>
-
             <ul id="expander" class="expander">
                 <li>
                     <button class="readMore" id="button1" aria-expanded="false" aria-controls="sect1" onclick="myFunctionFour()">
                         <span id="morefour"></span> <span id="myBtnfour">Se mina katter +</span><span id="dotsfour"></span></button>
                     <article class="textExpand" id="sect1" role="region" aria-live="assertive">
-
-                        <?php  //cats
-
+                        <?php 
                         $cat = new Cats();
-
                         $catlist = $cat->getCatsFromOwner();
                         $userid = $_SESSION['username'];
                         foreach ($catlist as $cat) {
                             if ($cat['userid'] == $_SESSION['username']) {
                                 if ($cat['catimg']) {
-                                    // om posten har en bild:
                                     echo "<div class='mykat'><h3 class='cath3'>" . $cat['name'] . "</h3><img class='catprofile' alt='catprofile' src='./uploads/cats/" . $cat['catimg'] . "'><a class='delete' href='profile.php?deletecatid=" . $cat['catid'] . "'>X</a><p class='catp'>Född:" . $cat['birth'] . "</p><p class='catp'>Under: " . $cat['mother'] . " Efter: " . $cat['father'] . "</p>" . $cat['merits'] . "<a class='btnupdate bt1' href='updatecat.php?catid=" . $cat['catid'] . "'>Uppdatera</a></div>";
                                 } else {
-                                    // om posten inte har en bild:
                                     echo "<h3>" . $cat['name'] . "</h3>" . "<p class='catp'>Född:" . $cat['birth'] . "</p><p class='catp'>Under: " . $cat['mother'] . " Efter: " . $cat['father'] . "</p><p class='catp'>" . $cat['merits'] . "</p><a class='delete' href='profile.php?deletecatid=" . $cat['catid'] . "'>X</a>" .
                                         " <a class='btnupdate' href='updatecat.php?catid=" . $cat['catid'] . "'>Uppdatera</a>";
                                 }
                             }
                         }
                         ?>
-
                     </article>
                 </li>
-
             </ul>
-
-
             <?php
             $cat = new Cats();
             if (isset($_GET['deletecatid'])) {
                 $catid = $_GET['deletecatid'];
-                //meddelar om radering funkat
                 if ($cat->deleteCat($catid)) {
-                    // header('Location: profile.php');
                     echo "<p>Katt raderad</p>";
                 } else {
                     echo "<p>Fel vid radering</p>";
                 }
             }
-
             $cat = new Cats();
-
             if (isset($_POST['name'])) {
                 $ownerid = $_SESSION['id'];
                 $userid = $_SESSION['username'];
@@ -147,11 +122,6 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
                 <input type="file" name="image" id="image" />
                 <input type="submit" value="Lägg till katt" name="upload" class="btnbig">
             </form>
-
-
-
-
-
         </div>
         <div class="right1">
             <h2 class="h2profile">Ändra profil</h2>
@@ -167,7 +137,6 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
                 <button type='submit' value='deleteuser' name='deleteuser' class='deleteu'>Radera Användare</button>
             </form>
             <?php
-
             $user = new Users();
             $update_user = $user->getUserFromUsername($username);
             $firstname = $update_user['firstname'];
@@ -187,8 +156,6 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
                 <br>
                 <input type="submit" name="submit" value='Ändra profil' class="btnbig"><br><br>
             </form>
-
-
             <?php
             $user = new Users();
             if (isset($_POST['submit'])) {
@@ -204,35 +171,25 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
                 }
             }
             ?>
-
-
         </div>
     </div>
-
     <h2 class="h2profile">Skapa blogginlägg</h2>
-
-
     <?php
     $blogpost = new Blogposts();
-    //radera post
     if (isset($_GET['deleteid'])) {
         $postid = $_GET['deleteid'];
-        //meddelar om radering funkat
         if ($blogpost->deleteBlogpost($postid)) {
-            // header('Location: profile.php');
             echo "<p>Post raderad</p>";
         } else {
             echo "<p>Fel vid radering</p>";
         }
     }
-
     if (isset($_POST['title'])) {
         $author = $_SESSION['username'];
         $authorid = $_SESSION['id'];
         $title = $_POST['title'];
         $content = $_POST['content'];
         $img = $_FILES['image']['name'];
-
         if ($blogpost->addBlogpost($author, $authorid, $title, $content, $img)) {
             echo "<p class='centerpp'>Blogginlägg skapad!</p>";
         } else {
@@ -248,7 +205,6 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
             <input type="file" name="image" id="image" />
             <input type="submit" value="Skapa blogginlägg" name="upload" class="btnbig">
         </form>
-
         <button onclick="topFunction()" id="topBtn" title="Go to top"><img src="./bilder/top.png" alt="Till toppen"></button>
         <?php
         $blogpost = new Blogposts();
@@ -259,14 +215,12 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
 
             if ($post['author'] == $_SESSION['username']) {
                 if ($post['img']) {
-                    // om posten har en bild:
                     echo "<div class='postt'><a class='delete' href='profile.php?deleteid=" . $post['postid'] . "'>x</a><img src='./profileimg/" . $post['profileimg'] . "' class='profileimg' alt='profileimg' >" .
                         "<p class='userp'>" . "<a href='user.php?id=" . $post['id'] . "'>" . $post['firstname'] . " " . $post['lastname'] . "</a></p>"
                         . "<p class='created'>" . $post['created'] .
                         "<h3><a href='blogpost.php?postid=" . $post['postid'] . "'>" . $post['title'] . "</a></h3>" . $post['content'] . "<figure><img class='blogimg' src='./uploads/" . $post['img'] . "' alt='blogbild' ></figure><p class='rightp'>" . $post['countcomments'] . " kommentarer</p><p> 
                 <a class='btnupdate' href='update.php?postid=" . $post['postid'] . "'>Uppdatera</a></p></div>";
                 } else {
-                    // om posten inte har en bild:
                     echo "<div class='postt'><a class='delete' href='profile.php?deleteid=" . $post['postid'] . "'>x</a><img src='./profileimg/" . $post['profileimg'] . "' class='profileimg' alt='profileimg' >" .
                         "<p class='userp'>" . "<a href='user.php?id=" . $post['id'] . "'>" . $post['firstname'] . " " . $post['lastname'] . "</a></p>"
                         . "<p class='created'>" . $post['created'] .
@@ -277,7 +231,6 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
         }
         ?>
     </div>
-
 </div>
 <script>
     CKEDITOR.replace('merits');

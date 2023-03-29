@@ -1,9 +1,7 @@
 "use strict";
 
-//get buttons
 const readMore = document.getElementsByClassName("readMore");
 
-//eventlistener
 for (let i = 0; i < readMore.length; i++) {
 
     readMore[i].addEventListener("click", function () {
@@ -17,9 +15,6 @@ for (let i = 0; i < readMore.length; i++) {
         } else {
             textExpand.style.display = "block";
             this.setAttribute("aria-expanded", "true");
-
         }
-
     })
-
 }

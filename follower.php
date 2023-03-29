@@ -17,7 +17,6 @@ if (!isset($_SESSION['username'])) {
     <button onclick="topFunction()" id="topBtn" title="Go to top"><img src="./bilder/top.png" alt="Till toppen"></button>
 </div>
 <div class='main1'>
-
     <div class="main34">
         <div class='left2'>
             <div class='searchforuser'>
@@ -26,15 +25,12 @@ if (!isset($_SESSION['username'])) {
                     <input type="submit" value="Sök användare" name="search" class="btnsearch">
                 </form>
             </div>
-
             <?php
-            //searcg user
             if (isset($_POST['search'])) {
                 if (!empty($_REQUEST['searchcriteria'])) {
                     $searchcriteria = $_POST['searchcriteria'];
                     $sql = "Select * from user where firstname or lastname or username like '%$searchcriteria%'";
                     $result = mysqli_query($conn, $sql);
-                    //skriv ut hittade användare
                     if ($row = mysqli_fetch_array($result)) {
                         echo ' <div class="searchforuser"><p class="centerp"><a href="user.php?id=' . $row["id"] . '">' . $row["username"] . '</a><br>';
                         echo ' Förnamn: ' . $row['firstname'];
@@ -54,13 +50,11 @@ if (!isset($_SESSION['username'])) {
                 </form>
             </div>
             <?php
-            //search for cat
             if (isset($_POST['searchcat'])) {
                 if (!empty($_REQUEST['searchcriteriacat'])) {
                     $searchcriteriacat = $_POST['searchcriteriacat'];
                     $sql = "Select * from cat join user on user.id = cat.ownerid where cat.name like '$searchcriteriacat';";
                     $result = mysqli_query($conn, $sql);
-                    //skriv ut hittade användare
                     if ($rowcat = mysqli_fetch_array($result)) {
                         echo ' <div class="searchforuser"><p class="centerp">Ägare: <a href="user.php?id=' . $rowcat["id"] . '">' . $rowcat["username"] . '</a><br>';
                         echo ' Katt: ' . $rowcat['name'];
@@ -77,27 +71,18 @@ if (!isset($_SESSION['username'])) {
     </div>
     <div class="main33">
         <div class='left'>
-
             <h3 class="centerh3">Mina favoriter</h3>
             <?php
-
             $user = new Users();
             $userlist = $user->getFollowers();
             foreach ($userlist as $user) {
-                //skriv ut användare
                 echo "<div class='user'><img src=profileimg/" . $user['profileimg'] . " alt='Profilbild' class='profileimg'> <p class='userp'><a class='postuser' href='user.php?id=" . $user['id'] . "'>" . $user['firstname'] . " " . $user['lastname'] . "</a></p></div>";
             }
             ?>
-
-
         </div>
-
-
-
         <div class='right'>
             <h3 class="centerh3">Bloggposter</h3>
             <?php
-
             $blogpost = new Blogposts();
             $blogpostlist = $blogpost->getFollowedPosts();
             foreach ($blogpostlist as $post) {
@@ -111,7 +96,6 @@ if (!isset($_SESSION['username'])) {
                         $post['content'] . "</p><p class='rightp'>" . $post['countcomments'] . " kommentarer</p></div>";
                 }
             }
-
             ?>
         </div>
     </div>

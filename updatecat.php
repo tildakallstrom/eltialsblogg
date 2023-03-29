@@ -10,9 +10,6 @@ if (!isset($_SESSION['username'])) {
         header('Location: index.php');
     }
 }
-
-
-
 include('includes/header.php');
 ?>
 <div class='welcome'>
@@ -22,15 +19,12 @@ include('includes/header.php');
     <script src="https://cdn.ckeditor.com/4.16.0/basic/ckeditor.js"></script>
     <?php
     $cat = new Cats();
-    //get cat from catid
     $update_cat = $cat->getCatFromId($catid);
     $name = $update_cat['name'];
     $birth = $update_cat['birth'];
     $mother = $update_cat['mother'];
     $father = $update_cat['father'];
     $merits = $update_cat['merits'];
-
-
     ?>
     <div class='post1'>
         <form method="post" enctype="multipart/form-data" class='createpost'>
@@ -43,8 +37,6 @@ include('includes/header.php');
             <input type="submit" value="Uppdatera katten" name="submit" class="btnreg">
         </form>
         <?php
-
-        //update cat
         $cat = new Cats();
         if (isset($_POST['name'])) {
             $name = $_POST['name'];
@@ -52,10 +44,7 @@ include('includes/header.php');
             $mother = $_POST['mother'];
             $father = $_POST['father'];
             $merits = $_POST['merits'];
-
-
             if ($cat->updateCat($name, $birth, $mother, $father, $merits, $catid)) {
-
                 echo "<p class='centerp'>Katten har uppdaterats!</p>";
             } else {
                 echo "<p class='centerp'>Fel vid uppdatering</p>";

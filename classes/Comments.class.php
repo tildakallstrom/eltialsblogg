@@ -2,18 +2,17 @@
 //Tilda Källström 2022
 class Comments
 {
-
     private $db;
     private $message;
 
     function __construct()
     {
-        //connect to db
         $this->db = new mysqli(DBHOST, DBUSER, DBPASS, DBDATABASE);
         if ($this->db->connect_errno > 0) {
             die("Fel vid anslutning: " . $this->db->connect_error);
         }
     }
+
     public function alert()
     {
         $username = $_GET['username'];
@@ -21,7 +20,6 @@ class Comments
         return $this->db->query($sql);
     }
 
-    //get all the comments on specific blogpost
     public function getComments(): array
     {
         $postid = $_GET['postid'];
@@ -31,7 +29,6 @@ class Comments
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
-    //add comment
     public function addComment($username, $postid, $message)
     {
         $username = $_SESSION['username'];
@@ -47,6 +44,7 @@ class Comments
         $result = $this->db->query($sql);
         return $result;
     }
+
     public function setMessage($message)
     {
         if (filter_var($message)) {
@@ -58,7 +56,7 @@ class Comments
             return false;
         }
     }
-    //delete comment
+
     public function deleteComment($commentid)
     {
         $commentid = intval($commentid);

@@ -24,7 +24,6 @@ if (isset($_GET['id'])) {
         $lastname = $_POST['lastname'];
         $profile = $_POST['profile'];
     }
-    //hämta användaren från id
     $show_user = $user->getUserFromId($id);
     $username = $show_user['username'];
     $profileimg = $show_user['profileimg'];
@@ -36,17 +35,12 @@ if (isset($_GET['id'])) {
 </div>
 <div class="mainblog">
     <div class="profile">
-
         <?php
         $users = new Users();
-
-       
-
         if ($_SESSION['id'] != $_GET['id']) {
             if (isset($_GET['id'])) {
                 $username = $_SESSION['username'];
                 $userid = $_GET['id'];
-                //kolla om inloggad användare följer denna användare, isf skicka ut follow-knapp, annars inte
                 if ($users->isThisFollowed($username, $userid)) {
                     echo '  <form id="unfollow" method="post" >
         <button type="submit" value="unfollow" name="unfollow" class="btnreg">Avfölj</button>
@@ -58,7 +52,6 @@ if (isset($_GET['id'])) {
                 }
             }
         }
-
         if (isset($_POST['follow'])) {
             if ($users->followUser($username, $userid)) {
                 echo "<p class='follow'>Du följer nu denna användare.</p>";
@@ -82,9 +75,7 @@ if (isset($_GET['id'])) {
             ?>
             <div>
                 <?php
-
                 $cat = new Cats();
-
                 $catlist = $cat->getCatsFromOwner();
                 $ownerid = $_GET['id'];
                 foreach ($catlist as $cat) {
@@ -97,9 +88,6 @@ if (isset($_GET['id'])) {
                         }
                     }
                 }
-
-
-
                 ?>
             </div>
         </div>
@@ -123,24 +111,20 @@ if (isset($_GET['id'])) {
     $profile = $show_user['profile'];
     echo "<h2 class='h2profile'>" . $username . "'s blogg.</h2>";
     ?>
-
     <?php
     $blogpost = new Blogposts();
     $blogpostslist = $blogpost->getBlogpostsFromThisAuthor();
     foreach ($blogpostslist as $post) {
         if ($post['authorid'] = $_GET['id']) {
             if ($post['img']) {
-                // om posten har en bild:
                 echo "<div class='post'><img src='./profileimg/" . $post['profileimg'] . "' class='profileimg' alt='profileimg' >" . "<p class='userp'>" . "<a href='user.php?id=" . $post['id'] . "'>" . $post['firstname'] . " " . $post['lastname'] . "</a></p>" . "<p class='created'>" . $post['created'] .
                     "</p><h3><a href='blogpost.php?postid=" . $post['postid'] . "'>" . $post['title'] . "</a></h3>" . $post['content'] . " <p><figure><img class='blogimg' src='./uploads/" . $post['img'] . "' alt='blogbild' ></figure><p class='rightp'>" . $post['countcomments'] . " kommentarer</p> </div> ";
             } else {
-                // om posten inte har en bild:
                 echo "<div class='post'><img src='./profileimg/" . $post['profileimg'] . "' class='profileimg' alt='profileimg' >" . "<p class='userp'>" . "<a href='user.php?id=" . $post['id'] . "'>" . $post['firstname'] . " " . $post['lastname'] . "</a></p>" . "<p class='created'>" . $post['created'] .
                     "</p><h3><a href='blogpost.php?postid=" . $post['postid'] . "'>" . $post['title'] . "</a></h3>" . $post['content'] . " <p><p class='rightp'>" . $post['countcomments'] . " kommentarer</p> </div> ";
             }
         }
     }
-
     ?>
 </div>
 <script>

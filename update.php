@@ -10,10 +10,6 @@ if (!isset($_SESSION['username'])) {
         header('Location: index.php');
     }
 }
-
-
-
-
 include('includes/header.php');
 ?>
 <div class='welcome'>
@@ -23,15 +19,10 @@ include('includes/header.php');
     <script src="https://cdn.ckeditor.com/4.16.0/basic/ckeditor.js"></script>
     <?php
     $blogpost = new Blogposts();
-    //hämta blogpost från postid
     $update_blogpost = $blogpost->getBlogpostFromId($postid);
     $title = $update_blogpost['title'];
     $content = $update_blogpost['content'];
     $author = $update_blogpost['author'];
-
-
-
-
     ?>
     <div class='post1'>
         <form method="post" enctype="multipart/form-data" class='createpost'>

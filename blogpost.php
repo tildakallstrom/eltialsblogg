@@ -18,7 +18,6 @@ include('includes/header.php');
     if ($blogpost->countComments($postid)) {
     }
 
-
     if (isset($_POST['title'])) {
         $authorid = $_POST['authorid'];
         $profileimg = $_POST['profileimg'];
@@ -30,7 +29,6 @@ include('includes/header.php');
         $img = $_POST['img'];
         $postid = $_GET['postid'];
     }
-    //hämta blogpost
     $show_blogpost = $blogpost->getBlogpostFromId($postid);
     $authorid = $show_blogpost['authorid'];
     $author = $show_blogpost['author'];
@@ -42,8 +40,6 @@ include('includes/header.php');
     $created = $show_blogpost['created'];
     $img = $show_blogpost['img'];
     $postid = $show_blogpost['postid'];
-
-
     ?>
     <?php if ($img) {
         echo "<div class='postone'><img src=profileimg/" . $profileimg . " alt='Profilbild' class='profileimg'>
@@ -62,16 +58,12 @@ include('includes/header.php');
     $comment = new Comments();
     if (isset($_GET['deleteid'])) {
         $commentid = $_GET['deleteid'];
-        //meddelar om radering funkat
         if ($comment->deleteComment($commentid)) {
             echo "<p>Kommentar raderad</p>";
         } else {
             echo "<p>Fel vid radering</p>";
         }
     }
-
-
-
     if (!isset($_SESSION['username'])) {
     } else {
         echo '<form method="post" action="#" class="post1">
@@ -83,7 +75,6 @@ include('includes/header.php');
         $username = $_SESSION['username'];
         $postid = $_GET['postid'];
         $message = $_POST['message'];
-        //meddelar om kommentar blivit skapad
         if ($comment->addComment($username, $postid, $message)) {
             echo "<p class='centerpp'>Kommentar skapad!</p>";
         } else {
@@ -95,7 +86,6 @@ include('includes/header.php');
     foreach ($commentslist as $comment) {
         if ($comment['postid'] == $_GET['postid']) {
             if ($_SESSION['username'] == $comment['user']) {
-                //är inloggad användare samma som skapare av kommentar skrivs delete-knapp ut, annars skrivs bara kommentaren ut
                 echo "<div class='post'><a class='delete' href='blogpost.php?deleteid=" . $comment['commentid'] . "'>x</a><img src=profileimg/" . $comment['profileimg'] . " alt='Profilbild' class='profileimg'> <p class='userp'><a class='postuser' href='user.php?id=" . $comment['id'] . "'>" . $comment['firstname'] . " " . $comment['lastname'] . "</a></p><p class='created'> " . $comment['commented'] .
                     "</p><p>" . $comment['message'] . "</p></div>";
             } else {

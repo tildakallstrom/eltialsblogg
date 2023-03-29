@@ -1,6 +1,5 @@
     <?php
 	//Tilda Källström 2022
-	//include file
 	include('includes/header.php');
 	?>
     <div class='welcome'>
