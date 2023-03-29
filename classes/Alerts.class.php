@@ -5,14 +5,12 @@ class Alerts
   private $db;
   function __construct()
   {
-    //connect to db
     $this->db = new mysqli(DBHOST, DBUSER, DBPASS, DBDATABASE);
     if ($this->db->connect_errno > 0) {
       die("Fel vid anslutning: " . $this->db->connect_error);
     }
   }
-  
-  //get 5 most recent alerts
+
   public function getAlerts($username)
   {
     $username = $_SESSION['username'];

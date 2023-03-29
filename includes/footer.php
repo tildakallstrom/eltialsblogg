@@ -16,11 +16,10 @@
                         eltials@ragdoll.com</p>
 
                     <?php
-                    //contactform
-                    if (isset($_POST['submit'])) { 
-                        $to = "tildakallstrom@gmail.com"; 
-                        $from = $_POST['eemail']; 
-                        $name = $_POST['nname']; 
+                    if (isset($_POST['submit'])) {
+                        $to = "tildakallstrom@gmail.com";
+                        $from = $_POST['eemail'];
+                        $name = $_POST['nname'];
                         $subject = "Form submission";
                         $subject2 = "Copy of your form submission";
                         $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
@@ -29,7 +28,7 @@
                         $headers = "From:" . $from;
                         $headers2 = "From:" . $to;
                         mail($to, $subject, $message, $headers);
-                        mail($from, $subject2, $message2, $headers2); 
+                        mail($from, $subject2, $message2, $headers2);
                         echo "<p>Mailet är skickat. Tack " . $name . ", vi återkommer så snart vi kan.</p>";
                         echo $message2;
                     }

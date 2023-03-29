@@ -21,7 +21,6 @@ class Blogposts
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
-    //get all the blogposts from a specific user
     public function getBlogpostsFromAuthor(): array
     {
         $username = $_SESSION['username'];
@@ -49,7 +48,6 @@ class Blogposts
 
     public function addBlogpost($author, $authorid, $title, $content, $img)
     {
-        //Control if correct values
         if (!$this->setTitle($title)) {
             return false;
         }
@@ -57,12 +55,10 @@ class Blogposts
             return false;
         }
 
-        //is the file of the right type? 
         if ((($_FILES["image"]["type"] == "image/jpeg") || ($_FILES["image"]["type"] ==
             "image/png") && ($_FILES["file"]["size"] < 200000))) {
             $img = $_FILES["image"]["name"];
             if ($img) {
-                // change size
                 $maxDimW = 500;
                 $maxDimH = 500;
                 list($width, $height) = getimagesize($_FILES['image']['tmp_name']);
@@ -70,7 +66,7 @@ class Blogposts
                     $target_filename = $_FILES['image']['tmp_name'];
                     $fn = $_FILES['image']['tmp_name'];
                     $size = getimagesize($fn);
-                    $ratio = $size[0] / $size[1]; // width/height
+                    $ratio = $size[0] / $size[1]; 
                     if ($ratio > 1) {
                         $width = $maxDimW;
                         $height = $maxDimH / $ratio;
@@ -82,11 +78,10 @@ class Blogposts
                     $dst = imagecreatetruecolor($width, $height);
                     imagecopyresampled($dst, $src, 0, 0, 0, 0, $width, $height, $size[0], $size[1]);
                     imagejpeg($dst, $target_filename);
-                }        //move file     
+                }           
                 move_uploaded_file($_FILES["image"]["tmp_name"], "uploads/" . $_FILES["image"]["name"]);
             }
         }
-        //if the file is the right type, put in db, else create post without img
         if ((($_FILES["image"]["type"] == "image/jpeg") || ($_FILES["image"]["type"] ==
             "image/png"))) {
             $sql = "INSERT INTO blogposts(author, authorid, title, content, img)VALUES('$author', $authorid, '" . $this->title . "', '" . $this->content . "', '$img');";
