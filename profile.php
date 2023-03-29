@@ -65,7 +65,7 @@ if (!isset($_SESSION['username']) && (!isset($_SESSION['id']))) {
                     <button class="readMore" id="button1" aria-expanded="false" aria-controls="sect1" onclick="myFunctionFour()">
                         <span id="morefour"></span> <span id="myBtnfour">Se mina katter +</span><span id="dotsfour"></span></button>
                     <article class="textExpand" id="sect1" role="region" aria-live="assertive">
-                        <?php 
+                        <?php
                         $cat = new Cats();
                         $catlist = $cat->getCatsFromOwner();
                         $userid = $_SESSION['username'];

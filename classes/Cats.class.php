@@ -179,7 +179,7 @@ class Cats
             return false;
         }
     }
-    
+
     public function setBirth($birth)
     {
         if (filter_var($birth)) {
